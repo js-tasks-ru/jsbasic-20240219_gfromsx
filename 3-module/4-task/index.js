@@ -1,10 +1,6 @@
-function showSalary(users, age) {
-  users = users.filter((user) => {
-    return user.age <= age;
-  });
-  let tmpArray = [];
-  for (let element of users) {
-    tmpArray.push(element.name + ', ' + element.balance);
-  }
-  return tmpArray.join('\n');
+function showSalary(data, age) {
+  return data
+    .filter(item => item.age <= age)
+    .map(item => `${item.name}, ${item.balance}`)
+    .join('\n');
 }
