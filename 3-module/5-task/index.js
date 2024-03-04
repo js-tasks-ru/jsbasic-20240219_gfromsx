@@ -4,7 +4,7 @@ function getMinMax(str) {
     return parseFloat(element);
   });
   str = str.filter((element) => {
-    return !isNaN(element)
-  })
+    return !isNaN(element);
+  });
   return {max: Math.max(...str), min: Math.min(...str)};
 }
