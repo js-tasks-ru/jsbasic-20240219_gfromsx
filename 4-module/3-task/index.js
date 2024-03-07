@@ -7,14 +7,14 @@ function highlight(table, tbody) {
   
   //делаю их авелибл и анавелибл
   for (let trElement of trElements) {
-    for(let tdElement of trElement.children) {
+    for (let tdElement of trElement.children) {
       if (tdElement.dataset.available == 'true') {
         tdElement.parentElement.classList.add(classAvailable);
       } 
       if (tdElement.dataset.available == 'false') {
         tdElement.parentElement.classList.add(classUnavailable);
       }
-    };
+    }
   }
 
   //скрываю лишние строки
@@ -26,15 +26,25 @@ function highlight(table, tbody) {
 
   //добавляю разделение на гендеры
   for (let trElement of trElements) {
-    for(let tdElement of trElement.children) {
+    for (let tdElement of trElement.children) {
       if (tdElement.textContent == 'm') {
         tdElement.parentElement.classList.add('male');
       }
       if (tdElement.textContent == 'f') {
         tdElement.parentElement.classList.add('female');
       }
-    };
+    }
   }
 
-  return console.log(trElements)
+  //добавляю инлайн стиль
+  for (let trElement of trElements) {
+    for (let tdElement of trElement.children) {
+      if (Number(tdElement.textContent) < 18) {
+        tdElement.parentElement.style = 'text-decoration: line-through';
+      }
+    }
+  }
+  
+
+  return console.log(trElements);
 }
