@@ -1,4 +1,4 @@
-function highlight(table, tbody) {
+function highlight(tbody) {
   let classAvailable = 'available';
   let classUnavailable = 'unavailable';
   
