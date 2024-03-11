@@ -5,24 +5,27 @@ function highlight(tbody) {
   //выбираю строки таблицы
   let trElements = tbody.getElementsByTagName('TR');
   
-  //делаю их авелибл и анавелибл
+  //делаю их авелибл и анавелибл и скрываю лишние строки
   for (let trElement of trElements) {
     for (let tdElement of trElement.children) {
       if (tdElement.dataset.available == 'true') {
         tdElement.parentElement.classList.add(classAvailable);
       } 
-      if (tdElement.dataset.available == 'false') {
+      else if (tdElement.dataset.available == 'false') {
         tdElement.parentElement.classList.add(classUnavailable);
+      }
+      if (trElement.lastElementChild.dataset.available == undefined) {
+        tdElement.parentElement.hidden = true;
       }
     }
   }
 
   //скрываю лишние строки
-  for (let trElement of trElements) {
-    if (trElement.className == '') {
-      trElement.hidden = true;
-    }
-  }
+  // for (let trElement of trElements) {
+  //   if (trElement.className == '') {
+  //     trElement.hidden = true;
+  //   }
+  // }
 
   //добавляю разделение на гендеры
   for (let trElement of trElements) {
