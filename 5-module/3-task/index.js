@@ -25,9 +25,7 @@ function initCarousel() {
     } else {
       leftArrow.style.display = '';
     } 
-    console.log(carouselCounter);
     carousel.style.transform = `translateX(-${carousel.offsetWidth * carouselCounter}px)`;
-    console.log(carouselCounter);
   });
 
   leftArrow.addEventListener('click', function () {
@@ -42,9 +40,7 @@ function initCarousel() {
     } else {
       leftArrow.style.display = '';
     }  
-    console.log(carouselCounter);
     carousel.style.transform = `translateX(-${carousel.offsetWidth * carouselCounter}px)`;
-    console.log(carouselCounter);
   });
 
 }
