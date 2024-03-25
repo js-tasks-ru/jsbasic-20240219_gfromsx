@@ -33,11 +33,11 @@ export default class UserTable {
                           </tr>
                       </thead>` ;
     table.innerHTML += `<tbody>${this.rows.map(({name, age, salary, city}) => `<tr>
-    <th>${name}</th>
-    <th>${age}</th>
-    <th>${salary}</th>
-    <th>${city}</th>
-    <th><button>X</button></th>
+    <td>${name}</td>
+    <td>${age}</td>
+    <td>${salary}</td>
+    <td>${city}</td>
+    <td><button>X</button></td>
     </tr>`).join('')}</tbody>`;
 
     this.elem = table;
@@ -46,10 +46,10 @@ export default class UserTable {
   addEventListener() {
     this.elem.addEventListener('click', function(event) {
       let button = event.target.closest('BUTTON');
-      let th = event.target.closest('TH');
+      let td = event.target.closest('TD');
       
       if (button) {
-        th.parentElement.hidden = 'true';
+        td.parentElement.hidden = 'true';
       }
     });
   }
